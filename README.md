@@ -1,4 +1,4 @@
-PostgreSQL syntax in Vim. it is so minimal that it's actually incomplete, and very lazy.
+PostgreSQL syntax in Vim. it is so minimal that it's actually incomplete.
 
 - `anyname()`: this is a function
 - `anyname ()`: this is not a function
