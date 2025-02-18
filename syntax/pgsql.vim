@@ -10,11 +10,9 @@ syn case ignore
 
 syn keyword Constant false null true
 
-syn keyword Keyword access add as asc begin by case check cluster column cache compress connect current cursor decimal default desc else elsif end exception exclusive file for from function group having identified if immediate increment index initial initrans into is level link logging loop maxextents maxtrans mode modify monitoring nocache nocompress nologging noparallel nowait of offline on online start parallel successful synonym table tablespace then to trigger uid unique user validate values view when whenever where with option order pctfree pctused privileges procedure public resource return row rowlabel rownum rows session share size type using join cross inner outer left right
-syn keyword Keyword not and or in any some all between exists like escape union intersect minus prior distinct sysdate out
-syn keyword Keyword analyze audit comment commit delete drop execute explain grant lock noaudit rename revoke rollback savepoint set truncate create update alter select insert
+syn keyword Keyword access add as asc begin by case check cluster column cache compress connect current cursor decimal default desc else elsif end exception exclusive file for from function group having identified if immediate increment index initial initrans into is level link logging loop maxextents maxtrans mode modify monitoring nocache nocompress nologging noparallel nowait of offline on online start parallel successful synonym table tablespace then to trigger uid unique user validate values view when whenever where with option order pctfree pctused privileges procedure public resource return row rowlabel rownum rows session share size type using join cross inner outer left right not and or in any some all between exists like escape union intersect minus prior distinct sysdate out analyze audit comment commit delete drop execute explain grant lock noaudit rename revoke rollback savepoint set truncate create update alter select insert
 
-syn keyword Type bfile blob boolean char character clob date datetime dec decimal float int integer long mlslabel nchar text json jsonb nclob number numeric nvarchar2 precision raw rowid smallint real timestamp urowid varchar varchar2 varray smallint bigint
+syn keyword Type bfile bigint bigserial bit blob boolean box bytea char character cidr circle clob date datetime dec decimal double float inet int integer interval json jsonb line long lseg macaddr macaddr8 mlslabel money nchar nclob number numeric nvarchar2 path pg_lsn pg_snapshot point polygon precision raw real rowid serial smallint smallserial text time timestamp tsquery tsvector txid_snapshot urowid uuid varchar varchar2 varray xml
 
 syn match Function /\w\+(\@=/
 syn match Type /::\w\+/
