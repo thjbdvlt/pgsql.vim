@@ -23,11 +23,6 @@ syn match Operator "[-+=/%*<#&>?|@$]\+"
 syn match Punctuation "[()\[\]\{\}.;,]\+"
 
 syn region String start=+[a-z]\?'+ end=+'+
-" syn region String start=+[a-z]\?q'\z([^[(<{]\)+ end=+\z1'+
-" syn region String start=+[a-z]\?q'<+ end=+>'+
-" syn region String start=+[a-z]\?q'{+ end=+}'+
-" syn region String start=+[a-z]\?q'(+ end=+)'+
-" syn region String start=+[a-z]\?q'\[+ end=+]'+
 
 syn match Number "-\=\<\d*\.\=[0-9_]\>"
 
