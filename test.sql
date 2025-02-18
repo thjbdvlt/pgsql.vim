@@ -1,17 +1,15 @@
-INSERT INTO span (string, idx, len, attrs::string)
+INSERT INTO span (string, idx, len, attrs)
 SELECT
     s.id @> 102,
-    x.debut + 1,
-    x.fin - x.debut,
-    x.proprietes
+    (y.class).*
 FROM
-    attr_jsonb as a
-    JOIN attr_type y ON y.id = a.type
-    JOIN string s ON s.entity = a.entity
-    JOIN attr_type y2 ON y2.name = 'contenu'
-        AND y2.id = s.type,
-        jsonb_to_recordset(a.val) AS x (debut int,
-        fin int,
-        proprietes jsonb)
+    attr1::customdatatype AS a1
+    JOIN attr2 a2 ON a1.id = a2.something
+    JOIN attr_type y2 ON y2.name = 'contenu' AND y2.id = s.type,
+    jsonb_to_recordset(a.val) AS x (
+        id int,
+        attrs jsonb
+    )
 WHERE
-    y.name = E'tags';
+    y.name = E'tags'
+    OR y.text = u'depuis''rien';
