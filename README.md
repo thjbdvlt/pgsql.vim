@@ -12,4 +12,4 @@ PostgreSQL syntax in Vim. it is so minimal that it's actually incomplete, and ve
 
 there is no folding support.
 
-![](./img/screenshot.sql)
+![](./img/screenshot.png)
