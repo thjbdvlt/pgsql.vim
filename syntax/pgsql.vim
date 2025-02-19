@@ -9,7 +9,6 @@ endif
 
 syn case ignore
 
-syn match Function /\w\+(\@=/
 syn match Type /::\w\+/
 syn match Operator "[-+=/%*<#&>?|@$:~^]\+"
 syn match Punctuation "[()\[\]\{\}.;,]\+"
@@ -19,9 +18,10 @@ syn region String start="E\?'" skip="''" end="'"
 syn match Comment "--.*$" contains=@Spell
 
 " match identifier so keywords in identifiers (e.g. as column names) are not
-" highlighted as keywords
-syn match Identifier /\w\+\.\w\+/
-syn match Punctuation /\./ containedin=Identifier
+" highlighted as keywords.
+syn match Identifier /\w\+\.\w\+(\?/
+syn match Punctuation /[.(]/ containedin=Identifier
+syn match Function /\w\+(\@=/ containedin=Identifier
 
 syn keyword Constant false null true
 
@@ -43,7 +43,7 @@ syn keyword Keyword abort absolute access action add admin after
 \ authorization backward basetype before begin between binary 
 \ both breadth by bypassrls cache call called canonical 
 \ cascade cascaded case cast catalog category century chain 
-\ characteristics check checkpoint class close cluster 
+\ characteristics check checkpoint close cluster 
 \ coalesce collatable collate collation column columns 
 \ combinefunc comment comments commit committed commutator 
 \ compress compression concurrently configuration conflict 
