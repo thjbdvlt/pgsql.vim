@@ -9,13 +9,13 @@ endif
 
 syn case ignore
 
-syn match Type /::\w\+/
-syn match Operator "[-+=/%*<#&>?|@$:~^]\+"
+syn match Operator "[-+=/%*<#&>?!|@$:~^]\+"
 syn match Punctuation "[()\[\]\{\}.;,]\+"
 syn match Number "-\=\<\d*\.\=[0-9_]\>"
 syn region Comment start="/\*" end="\*/" contains=@Spell
 syn region String start="E\?'" skip="''" end="'" 
 syn match Comment "--.*$" contains=@Spell
+syn match Type /::\w\+/
 
 " match identifier so keywords in identifiers (e.g. as column names) are not
 " highlighted as keywords.
@@ -26,7 +26,7 @@ syn match Function /\w\+(\@=/ containedin=Identifier
 syn keyword Constant false null true
 
 " https://www.postgresql.org/docs/current/datatype.html
-syn keyword Type bfile bigint bigserial bit blob boolean box bytea 
+syn keyword Type bfile bigint bigserial bit blob bool boolean box bytea 
 \ char character cidr circle clob date datetime dec decimal 
 \ double float inet int integer interval json jsonb line long 
 \ lseg macaddr macaddr8 mlslabel money nchar nclob number 
@@ -43,7 +43,7 @@ syn keyword Keyword abort absolute access action add admin after
 \ authorization backward basetype before begin between binary 
 \ both breadth by bypassrls cache call called canonical 
 \ cascade cascaded case cast catalog category century chain 
-\ characteristics check checkpoint close cluster 
+\ characteristics check checkpoint close 
 \ coalesce collatable collate collation column columns 
 \ combinefunc comment comments commit committed commutator 
 \ compress compression concurrently configuration conflict 
@@ -59,7 +59,7 @@ syn keyword Keyword abort absolute access action add admin after
 \ element else elsif enable encoding encrypted end enum epoch 
 \ errcode escape event except exception exclude excluding 
 \ exclusive execute exists exit explain expression extension 
-\ external extract false family fetch file filter finalfunc 
+\ external extract family fetch file filter finalfunc 
 \ finalfunc_extra finalfunc_modify finalize first float 
 \ following for force foreach foreign forward found freeze 
 \ from full function functions generated get gettoken global 
@@ -78,12 +78,12 @@ syn keyword Keyword abort absolute access action add admin after
 \ maxvalue merges message method mfinalfunc mfinalfunc_extra 
 \ mfinalfunc_modify microseconds millennium milliseconds 
 \ minitcond minus minute minvalue minvfunc mode modify 
-\ monitoring month move msfunc msspace mstype name names 
+\ monitoring month move msfunc msspace mstype
 \ national natural nchar negator new next nfc nfd nfkc nfkd 
 \ no noaudit nobypassrls nocache nocompress nocreatedb 
 \ nocreaterole noinherit nologging nologin none noparallel 
 \ noreplication normalize normalized nosuperuser not nothing 
-\ notice notify notnull nowait null nullif nulls object of 
+\ notice notify notnull nowait nullif nulls object of 
 \ off offline offset oids old on online only open operator 
 \ option options or order ordinality others out outer output 
 \ over overlaps overlay overriding owned owner parallel 
@@ -94,7 +94,7 @@ syn keyword Keyword abort absolute access action add admin after
 \ procedures program provider public publication quarter 
 \ query quote raise range read readonly read_write reassign 
 \ receive recheck recursive ref references referencing 
-\ refresh reindex relative release rename repeatable replace 
+\ refresh reindex relative release rename repeatable
 \ replica replication reset resource restart restrict 
 \ restricted restrictive return returning returns reverse 
 \ revoke right rightarg role rollback rollup routine routines 
@@ -105,14 +105,14 @@ syn keyword Keyword abort absolute access action add admin after
 \ similar simple size skip slice snapshot some sortop sql 
 \ sqlstate sspace stable stacked standalone start statement 
 \ statistics stdin stdout storage stored strict strip stype 
-\ subscription substring subtype subtype_diff subtype_opclass 
+\ subscription subtype subtype_diff subtype_opclass 
 \ successful superuser support symmetric synonym sysdate 
 \ sysid system table tables tablesample tablespace temp 
-\ template temporary text tg_argv tg_event tg_level tg_name 
+\ template temporary tg_argv tg_event tg_level tg_name 
 \ tg_nargs tg_op tg_relid tg_relname tg_table_name 
 \ tg_table_schema tg_tag tg_when then ties timezone 
 \ timezone_hour timezone_minute to trailing transaction 
-\ transform treat trigger trim true truncate trusted type 
+\ transform treat trigger truncate trusted 
 \ types typmod_in typmod_out uescape uid unbounded 
 \ uncommitted unencrypted union unique unknown unlisten 
 \ unlogged unsafe until update usage user using vacuum valid 
